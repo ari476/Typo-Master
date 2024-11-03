@@ -1,0 +1,42 @@
+<button mat-icon-button class="logout-button" (click)="logout()">
+  <mat-icon>exit_to_app</mat-icon>
+</button>
+
+<div class="center-container">
+  <mat-card>
+    <mat-card-content>
+      <form [formControl]="usernameCtrl" (ngSubmit)="onSubmit()">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Enter your username</mat-label>
+          <input
+            matInput
+            [formControl]="usernameCtrl"
+            (blur)="updateErrorMessage()"
+            required
+          />
+          @if (usernameCtrl.invalid) {
+          <mat-error>{{ errorMessage }}</mat-error>
+          }
+        </mat-form-field>
+        <div class="button-container">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="usernameCtrl.invalid"
+          >
+            {{ isLoginMode ? "Login" : "Sign up" }}
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-footer>
+      <p class="footer-text">
+        {{ isLoginMode ? 'If you don\'t have an account, register here' : 'If you have an account already, log in' }}
+        <a class="tag-text" (click)="toggleMode()">{{ isLoginMode ? 'Sign up' : 'Log in' }}</a>.
+      </p>
+    </mat-card-footer>
+  </mat-card>
+</div>
+
+
