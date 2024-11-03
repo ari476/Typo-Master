@@ -1,0 +1,60 @@
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3em;
+}
+
+.full-width {
+  width: 100%;
+  max-width: 400px;
+  padding-top: 1em;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+mat-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease; /* Optional: Adds a smooth transition */
+}
+
+mat-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Optional: Adds a deeper shadow on hover */
+}
+
+::ng-deep .mdc-text-field--outlined {
+  --mdc-outlined-text-field-container-shape: 8px !important;
+}
+
+.footer-text {
+  text-align: center;
+  font-size: 0.9em;
+  margin: 10px;
+
+}
+
+.footer-text a {
+  color: #3f51b5;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
+
+.logout-button {
+  color: black; /* Initial color */
+  transition: color 0.3s ease; /* Smooth transition */
+}
+
+/* Add hover effect */
+.logout-button:hover {
+  color: red; /* Change color on hover */
+}
+
+.tag-text {
+  cursor: pointer;
+}
